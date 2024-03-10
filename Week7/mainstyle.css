@@ -1,0 +1,21 @@
+
+.blue{ color: blue; font-style:italic;}
+.red{
+    color:crimson; font-style:italic;
+}
+.yellow{
+    color:goldenrod; font-style:italic;
+}
+.grey{
+    color:gray; font-style: italic;
+}
+.purple{
+    color:purple; font-style: italic;
+}
+p{
+    font-family: arial;
+}
+
+#bigger{
+    font-size: 48px; 
+}
