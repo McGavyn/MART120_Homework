@@ -10,22 +10,34 @@
     </style>
 </head>
 
-<body>
+<body style="text-align: center;">
     <div class="Top_class">
         <form>
+        <b>
+
+
+        </b>
         <div class="Username">
             <!-- Checkbox for accepting the agreement -->
             <label for="name">Name</label>
             <input id="name" type="text" class="needed" required></input>
         </div>
+        <b>
+
+
+        </b>
         <div class="Userphone">
             <!-- Checkbox for accepting the agreement -->
             <label for="phone">Phone Number</label>
             <input id="phone" class="needed" type="text" required></input>
         </div>
+        <b>
+
+            
+        </b>
             <div class="checkbox">
                 <!-- Checkbox for accepting the agreement -->
-                <label for="AgreeTerms">Agree</label>
+                <label for="AgreeTerms">Terms of Agreement</label>
                 <input id="AgreeTerms" class="needed" type="checkbox" required></input>
             </div>
             <!-- CLick button to validate using the validate() function -->
@@ -34,6 +46,7 @@
     </div>
 
     <div id="result"></div>
+    <div id="mustaccept"></div>
 
     <script>
             function results()
@@ -77,6 +90,7 @@
 
             if (ValidityState.valueMissing == true) {
                 info3.style.backgroundColor = "red"
+                document.getElementById("mustaccept").innerHTML = "Must accept the Terms of Agreement"
                 event.preventDefault;
             }
             else {
