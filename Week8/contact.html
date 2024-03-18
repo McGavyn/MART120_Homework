@@ -9,7 +9,34 @@
          var Phone = document.getElementById("typedPhone").value;
          var Agree = document.getElementById("YesNo").value;
          document.getElementById("UserInfo").innerHTML = "Name: " + Name + " phone: " + Phone + " Agreed: " + Agree;
+
+         if (Name == "")
+         {
+            alert("Please enter a name");
+            event.preventDefault;
+            input.classList.add("missing");
+         }
+         else {input.classList.remove("missing")}
+
+         if (Phone == "")
+         {
+            alert("Please enter a phone number");
+            event.preventDefault;
+            input.classList.add("missing");
+         }
+         else {input.classList.remove("missing")}
+      
+         if (Agreement == false)
+         {
+            alert("Please agree to the terms");
+            event.preventDefault;
+            input.classList.add("missing");
+         }
+         else {input.classList.remove("missing")}
+         
+
       }
+
 
       window.onload=function() {
   document.tables[0].onsubmit=function() 
