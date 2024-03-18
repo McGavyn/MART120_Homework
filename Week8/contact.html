@@ -13,14 +13,28 @@
    document.getElementById("validate").addEventListener("subButton", function(event)
       {
          var input1 = document.getElementById("typedName").value;
+         var input2 = document.getElementById("typesPhone").value;
+         var input3 = document.getElementById("YesNo").value;
          if (input1.trim() === "")
             {
                
                alert("Please provide a name");
                event.preventDefault();
             }
+            if (input2.trim() === "")
+            {
+               
+               alert("Please provide a phone number");
+               event.preventDefault();
+            }
+            if (input1.trim() === "")
+            {
+               
+               alert("Please agree to the terms");
+               event.preventDefault();
+            }
+       
       }
-
    )
    </script>
 <link rel="stylesheet" type="text/css" href="mainstyle.css"> 
