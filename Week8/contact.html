@@ -11,56 +11,27 @@
          document.getElementById("UserInfo").innerHTML = "Name: " + Name + " phone: " + Phone + " Agreed: " + Agree;
       }
 
-   document.getElementById("validate").addEventListener("subButton", function(event)
-      {
-         var UserInput = document.querySelectorAll("#validate .neededIn");
-         var ValidateInput = true;
-         inputs.foreach(function(input)
-         {
-            if (input.value.trim() === "")
-            {
-               input.classList.add("missing");
-               ValidateInput = false;
-            }
-            else {
-               input.classList.remove("missing")
-            }
-         }
-         );
-         if (!ValidateInput) {
-            alert("Please fill in all required input fields");
-            event.preventDefault();
-         }
-         
+      window.onload=function() {
+  document.tables[0].onsubmit=function() 
+  { // first table on page
+    var Username = this.elements[0].value; // first field in table
+    if (countryValue == "") {
+      alert("Please enter a name");
+      return false;
+    }
+    var Userphone = this.elements[1].selectedIndex; // second field
+    if (Userphone = "") { // your first option does not have a value 
+      alert("Please enter a phone number");
+      return false;
+    }
+    this.table.submit; // allow submission
+  }
+}
 
 
 
-         var input1 = document.getElementById("typedName").value;
-         var input2 = document.getElementById("typesPhone").value;
-         var input3 = document.getElementById("YesNo").value;
-         if (input1.trim() === "")
-            {
-               FocusEvent=input1
-               alert("Please provide a name");
-               event.preventDefault();
-            }
-            if (input2.trim() === "")
-            {
-               FocusEvent=input2
-               alert("Please provide a phone number");
-               event.preventDefault();
-            }
-            if (input3.trim() === "")
-            {
-               FocusEvent=input3
-               alert("Please agree to the terms");
-               event.preventDefault();
-            }
-       
-      }
-   )
+
    </script>
-<link rel="stylesheet" type="text/css" href="mainstyle.css"> 
 <style>
 
     span.Center{
