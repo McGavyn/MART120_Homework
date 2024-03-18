@@ -6,7 +6,8 @@
       {
          var Name = document.getElementById("typedName").value;
          var Phone = document.getElementById("typedPhone").value;
-         window.alert("Name: " + Name + "phone: " + Phone)
+         var Agree = document.getElementById("YesNo").value;
+         document.getElementById("UserInfo").innerHTML = "Name: " + Name + " phone: " + Phone + " Agreed: " + Agree;
       }
    </script>
 <link rel="stylesheet" type="text/css" href="mainstyle.css"> 
@@ -31,7 +32,7 @@
       <td><input type="text" id="typedPhone" ></td>
    </tr>
    <td>Agreement</td>
-   <td><input type="something" id="YesNo"></td>
+   <td><input type="checkbox" id="YesNo"></td>
    <tr>
       <td colspan="2"><button id="subButton" onClick="retrieveINFO();">Submit</button></td>
    </tr>
