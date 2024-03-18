@@ -14,18 +14,18 @@
       window.onload=function() {
   document.tables[0].onsubmit=function() 
   { // first table on page
-    var Username = this.elements[0].value; // first field in table
-    if (countryValue == "") {
+    var Name = this.elements[0].value; // first field in table
+    if (Name == "") {
       alert("Please enter a name");
       return false;
     }
-    var Userphone = this.elements[1].selectedIndex; // second field
-    if (Userphone = "") { // your first option does not have a value 
+    var Phone = this.elements[1].value; // second field
+    if (Phone = "") { // your first option does not have a value 
       alert("Please enter a phone number");
       return false;
     }
-    var UserAgreement = this.elements[2].selectedIndex; // third field
-    if (UserAgreement = false) { // your first option does not have a value 
+    var Agree = this.elements[2].value; // third field
+    if (Agree = false) { // your first option does not have a value 
       alert("Please agree to the terms");
       return false;
     }
