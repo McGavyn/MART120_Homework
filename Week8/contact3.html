@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="mainstyle.css">
+    <title> Testing "Required Attribute" </title>
+    <style>
+      span.Center{
+               text-align: center;
+            } 
+    </style>
+</head>
+
+<body>
+    <div class="Top_class">
+
+        <div class="Username">
+            <!-- Checkbox for accepting the agreement -->
+            <label for="name">Name</label>
+            <input id="name" type="text" required>
+        </div>
+        <div class="Userphone">
+            <!-- Checkbox for accepting the agreement -->
+            <label for="phone">Phone Number</label>
+            <input id="phone" type="text" required>
+        </div>
+            <div class="checkbox">
+                <!-- Checkbox for accepting the agreement -->
+                <label for="AgreeTerms">Agree</label>
+                <input id="AgreeTerms" type="checkbox" required>
+            </div>
+            <!-- CLick button to validate using the validate() function -->
+            <button id="agreed" onclick="validate()">Submit</button>
+    </div>
+
+    <script>
+  function validate(){
+    
+  }
+    </script>
+</body>
+
+</html>

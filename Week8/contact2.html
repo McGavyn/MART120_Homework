@@ -25,7 +25,7 @@
             <div class="checkbox">
                 <!-- Checkbox for accepting the agreement -->
                 <label for="AgreeTerms">Agree</label>
-                <input id="AgreeTerms" type="checkbox" value="Agreeed">
+                <input id="AgreeTerms" type="checkbox" value="Agreeed" required>
             </div>
             <!-- CLick button to validate using the validate() function -->
             <button id="agreed" onclick="validate()">Submit</button>
@@ -52,13 +52,14 @@
                 text.innerHTML = "Please accept the agreement to proceed"
                 event.preventDefault
             } 
-             }      
+             }
+
             function validate2(){
                            if (title==""){
                 text.innerHTML = "Please provide a name"
                 event.preventDefault
             }  
-        }
+            }
            
             function validate3(){
               
