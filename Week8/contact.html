@@ -12,6 +12,28 @@
 
    document.getElementById("validate").addEventListener("subButton", function(event)
       {
+         var UserInput = document.querySelectorAll("#validate .neededIn");
+         var ValidateInput = true;
+         inputs.foreach(function(input)
+         {
+            if (input.value.trim() === "")
+            {
+               input.classList.add("missing");
+               ValidateInput = false;
+            }
+            else {
+               input.classList.remove("missing")
+            }
+         }
+         );
+         if (!ValidateInput) {
+            alert("Please fill in all required input fields");
+            event.preventDefault();
+         }
+         
+
+
+
          var input1 = document.getElementById("typedName").value;
          var input2 = document.getElementById("typesPhone").value;
          var input3 = document.getElementById("YesNo").value;
@@ -52,14 +74,14 @@
    <table id="validate">
    <tr>
       <td>Name</td>
-      <td><input type="text" id="typedName" required></td>
+      <td><input type="text" id="typedName" required class="neededIn"></td>
    </tr>
    <tr>
       <td>Phone Number</td>
-      <td><input type="text" id="typedPhone" required></td>
+      <td><input type="text" id="typedPhone" required class="neededIn"></td>
    </tr>
    <td>Agree to Terms</td>
-   <td><input type="checkbox" id="YesNo" required></td>
+   <td><input type="checkbox" id="YesNo" required class="neededIn"></td>
    <tr>
       <td colspan="2"><button id="subButton" onClick="retrieveINFO();">Submit</button></td>
    </tr>

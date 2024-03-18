@@ -19,3 +19,12 @@ p{
 #bigger{
     font-size: 48px; 
 }
+
+.neededIn {
+    border: 1px solid black;
+}
+
+.neededIn.missing {
+border-color: red;
+background-color: red;
+}
