@@ -9,6 +9,19 @@
          var Agree = document.getElementById("YesNo").value;
          document.getElementById("UserInfo").innerHTML = "Name: " + Name + " phone: " + Phone + " Agreed: " + Agree;
       }
+
+   document.getElementById("validate").addEventListener("subButton", function(event)
+      {
+         var input1 = document.getElementById("typedName").value;
+         if (input1.trim() === "")
+            {
+               
+               alert("Please provide a name");
+               event.preventDefault();
+            }
+      }
+
+   )
    </script>
 <link rel="stylesheet" type="text/css" href="mainstyle.css"> 
 <style>
@@ -22,7 +35,7 @@
 
 <body>
 <span.Center>
-   <table>
+   <table id="validate">
    <tr>
       <td>Name</td>
       <td><input type="text" id="typedName" required></td>
