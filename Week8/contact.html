@@ -3,43 +3,7 @@
 <head>
    <link rel="stylesheet" type="text/css" href="mainstyle.css">
    <script>
-   function retrieveINFO()
-      {
-         var Name = document.getElementById("typedName").value;
-         var Phone = document.getElementById("typedPhone").value;
-         var Agree = document.getElementById("YesNo").value;
-         document.getElementById("UserInfo").innerHTML = "Name: " + Name + " phone: " + Phone + " Agreed: " + Agree;
-
-         if (Name == "")
-         {
-            alert("Please enter a name");
-            event.preventDefault;
-            input.classList.add("missing");
-         }
-         else {input.classList.remove("missing")};
-
-         if (Phone == "")
-         {
-            alert("Please enter a phone number");
-            event.preventDefault;
-            input.classList.add("missing");
-         }
-         else {input.classList.remove("missing")};
       
-         if (Agreement == false)
-         {
-            alert("Please agree to the terms");
-            event.preventDefault;
-            input.classList.add("missing");
-         }
-         else {input.classList.remove("missing")};
-         
-
-      }
-
-
-
-
    </script>
 <style>
 
@@ -52,10 +16,30 @@
 
 <body>
 <span.Center>
-   <table id="validate">
-      <br>
-      <br>
-      <br>
+   <div id="error"></div>
+   <form id="validate">
+   <div>
+      <label for="Username">Name</label>
+      <input id="Username" name="Username" type="text" required>
+   </div>
+   <div>
+      <label for="Userphone">Phone Number</label>
+      <input id="Userphone" name="Userphone" type="text" required>
+   </div>
+   <div>
+      <label for="AgreeTerms">Terms of Agreement</label>
+      <input id="AgreeTerms" value="Confirmed" type="checkbox" required>
+   </div>
+   <div class="Agreement">
+      <!-- Checkbox for accepting the agreement -->
+      <label for="AgreeTerms">Agree to Terms</label>
+      <input id="AgreeTerms" type="checkbox" value="Agreeed">
+  </div>
+  <!-- CLick button to validate using the validate() function -->
+  <button id="agreed" onclick="validate()">Submit</button>
+</div>
+<h3 id="validation"></h3>
+
       <tr>
       <td>Name</td>
       <td><input type="text" id="typedName" required class="neededIn"></td>
@@ -70,6 +54,9 @@
    <br>
    <br>
    <br>
+
+
+
    <td>Agree to Terms</td>
    <td><input type="checkbox" id="YesNo" required class="neededIn"></td>
    <tr>

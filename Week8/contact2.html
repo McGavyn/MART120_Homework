@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Checkbox validation using javascript javascript </title>
+    <style>
+      span.Center{
+               text-align: center;
+            } 
+    </style>
+</head>
+
+<body>
+    <div class="Top_class">
+        <div class="Agreement_header">
+            <h3>Agreement</h3>
+        </div>
+            <div class="checkbox_class">
+                <!-- Checkbox for accepting the agreement -->
+                <label for="agree_document">Agree</label>
+                <input id="agree_document" type="checkbox" value="Agreeed">
+            </div>
+            <!-- CLick button to validate using the validate() function -->
+            <button id="agreed" onclick="validate()">Submit</button>
+    </div>
+    <h3 id="confirm"></h3>
+
+    <script>
+        function validate(){
+            // get the checkbox element from the DOM using the getElementId function
+            let checkbox=document.getElementById("agree_document");
+            // get the text element to display the status of checkbox
+            let text=document.getElementById("confirm");
+            // use the checked property to check if the checkbox is checked
+            if (checkbox.checked){
+                // display result by assigning to innerHTML of the text element.
+                text.innerHTML="Thank you for accepting the agreement";
+            }
+            else{
+                text.innerHTML = "Please accept the agreement to proceed";
+            }
+                
+
+        }
+            
+
+    </script>
+</body>
+
+</html>
