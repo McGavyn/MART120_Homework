@@ -15,12 +15,12 @@
         <div class="Username">
             <!-- Checkbox for accepting the agreement -->
             <label for="name">Name</label>
-            <input id="name" type="text" value="fill">
+            <input id="name" type="text" required>
         </div>
         <div class="Userphone">
             <!-- Checkbox for accepting the agreement -->
             <label for="phone">Phone Number</label>
-            <input id="phone" type="text" value="fill">
+            <input id="phone" type="text" required>
         </div>
             <div class="checkbox">
                 <!-- Checkbox for accepting the agreement -->
@@ -50,7 +50,7 @@
             else{
                 text.innerHTML = "Please accept the agreement to proceed";
             }
-            
+
             if (title==''){
                 text.innerHTML = "Please provide a name"
             }
