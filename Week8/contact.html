@@ -1,0 +1,44 @@
+<html>
+<title>Contact Me!</title>
+<head>
+   <script>
+   function getData()
+      {
+         var Name = document.getElementById("typedName").value;
+         var Phone = document.getElementById("typedPhone").value;
+         window.alert("Name: " + Name + "phone: " + Phone)
+      }
+   </script>
+<link rel="stylesheet" type="text/css" href="mainstyle.css"> 
+<style>
+
+    span.Center{
+       text-align: center;
+    } 
+ </style>
+
+</head>
+
+<body>
+<span.Center>
+   <table>
+   <tr>
+      <td>Name</td>
+      <td><input type="text" id="typedName" ></td>
+   </tr>
+   <tr>
+      <td>Phone Number</td>
+      <td><input type="text" id="typedPhone" ></td>
+   </tr>
+   <td>Agreement</td>
+   <td><input type="something" id="YesNo"></td>
+   <tr>
+      <td colspan="2"><button id="subButton" onClick="retrieveINFO();">Submit</button></td>
+   </tr>
+   </table>
+
+</span.Center>
+</body>
+
+
+</html>
