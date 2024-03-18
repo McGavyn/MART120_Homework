@@ -24,7 +24,16 @@
       alert("Please enter a phone number");
       return false;
     }
-    this.table.submit; // allow submission
+    var UserAgreement = this.elements[2].selectedIndex; // third field
+    if (UserAgreement = false) { // your first option does not have a value 
+      alert("Please agree to the terms");
+      return false;
+    }
+    table.elements[table.elements.length-1].onclick=function(){
+
+       this.table.submit(); // allow submission
+    }
+   
   }
 }
 
