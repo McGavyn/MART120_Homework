@@ -28,7 +28,7 @@
                 <input id="AgreeTerms" type="checkbox" value="Agreeed">
             </div>
             <!-- CLick button to validate using the validate() function -->
-            <button id="agreed" onclick="validate()">Submit</button>
+            <button id="agreed" onclick="validate(), validate2(), validate3()">Submit</button>
     </div>
 
       
@@ -51,20 +51,27 @@
             else{
                 text.innerHTML = "Please accept the agreement to proceed"
                 event.preventDefault
-
-            };
-
-            if (title==""){
+            } 
+             }      
+            function validate2(){
+                           if (title==""){
                 text.innerHTML = "Please provide a name"
                 event.preventDefault
-            };
-
+            }  
+        }
+           
+            function validate3(){
+              
             if (digits==""){
                 text.innerHTML = "Please provide a phone number"
                 event.preventDefault
-            };
+            }  
+            }
+           
 
-        };
+ 
+
+      
             
 
     </script>
