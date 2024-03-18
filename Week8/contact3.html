@@ -16,17 +16,17 @@
         <div class="Username">
             <!-- Checkbox for accepting the agreement -->
             <label for="name">Name</label>
-            <input id="name" type="text" required></input>
+            <input id="name" type="text" class="needed" required></input>
         </div>
         <div class="Userphone">
             <!-- Checkbox for accepting the agreement -->
             <label for="phone">Phone Number</label>
-            <input id="phone" type="text" required></input>
+            <input id="phone" class="needed" type="text" required></input>
         </div>
             <div class="checkbox">
                 <!-- Checkbox for accepting the agreement -->
                 <label for="AgreeTerms">Agree</label>
-                <input id="AgreeTerms" type="checkbox" required></input>
+                <input id="AgreeTerms" class="needed" type="checkbox" required></input>
             </div>
             <!-- CLick button to validate using the validate() function -->
             <button type="button" onClick="results();">Submit</button>
@@ -43,6 +43,30 @@
 
                 document.getElementById("result").innerHTML = "name: " + name + " phone: " + phone;
             }
+
+
+        const info = document.getElementById("name");
+        const info2 = document.getElementById("phone")
+        const info3 = document.getElementById("AgreeTerms")
+        info.oninput = function(evt){
+            const inVal = evt.target.value;
+
+            if (inVal =="") {
+                info.style.backgroundColor = "red";
+            }
+            else {
+                info.style.backgroundColor = "white";
+            }
+        }
+     let necessary = document.getElementsByClassName("needed").value;
+document.getElementsByClassName("needed").onfocus = function() {
+  if (necessary == "") {
+    formText.style.backgroundColor = "red";
+  } else {
+    formText.style.backgroundColor = "white";
+  }
+    
+  };
     </script>
 </body>
 
