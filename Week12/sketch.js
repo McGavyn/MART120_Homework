@@ -8,42 +8,40 @@ var Sqx = 799
 
 function setup()
 {
-    createCanvas(800,600);
+  createCanvas(800,600);
+  keyPressed()   
 }
 function draw() 
 {
-Player();
+background(123,28,38);
 Bord();
-controlPlayer();  
+Player();
 mCircle();
 Obst();
-mRec()
-mRound()
-mSq()
-bacG();
+mRec();
+mRound();
+mSq();
 Ex();
 YouWin();
 }
 
-function bacG(){
- background(123,28,38);
-}
 
 function Ex(){
-  fill(0)
-  textSize(30)
-  text('EXIT', 730, 27)
+
   fill(200,1,300)
   rect(720, 0, 80, 40)
   rect(770, 40, 30, 60)
+  fill(0)
+  textSize(30)
+  text('EXIT', 730, 27)
 }
 
 function Bord(){
   fill(90, 200, 120)
   rect(0,0,800,4)
   rect(0,0,4,600)
-  rect(800,0,4,600)
-  rect(0,600,4,600)
+  rect(796,0,4,600)
+  rect(0,596,800,4)
 }
 
 function Obst(){
@@ -121,33 +119,31 @@ function mRec(){
   }
 }
 
-function controlPlayer()
-{
-if (keyIsDown(s)) 
-{
-  y += 10;
-} 
-else if (keyIsDown(w)) 
-{
-  y -= 10;
-}
 
-if (keyIsDown(d)) 
-{
-  x += 10;
-} 
-else if (keyIsDown(a)) 
-{
-  x -= 10;
-}
+  function keyPressed(){
+  if (key == 'd') 
+  {
+   x+=30
+  } 
+  else if (key == 'a') 
+  {
+    x-=30;
+  }
+  else if (key == 's')
+    {
+      y+=30;
+    }
+   else if (key == 'w')
+    {
+      y-=30;
+    }
+  }
 
-}
+
 
 
    function mousePressed()
     {
         mousex = mouseX;
         mousey = mouseY;
-        
-  
     }
