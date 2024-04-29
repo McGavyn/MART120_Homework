@@ -39,6 +39,7 @@ Ex();
 YouWin();
 }
 
+// for both good and bad shapes, add in if/then statements to make them more difficult over time (tie it to the score?)
 function ArshapeSet()
 {
 
@@ -79,19 +80,15 @@ function Gshapes()
     myYs[i] = getRandomNumber(599)
       } 
     
-   while((myXs+2) < Px > (myXs-2))
-  {
-    points += 1
-  }
-   while((myYs+2) < Px > (myYs-2))
-  {
-    points += 1
-  }
+    while(myXs[i] <= Px <= myXs[i] && myYs[i] <= Py <= myYs[i]){
+       points += 1
+    }
+          
+       
     
-  }
   // add something to earn points on contact
 }
-
+}
 //the bad shapes that take points 
 function Bshapes(){
   for(var i = 0; i < mybXs.length; i++)
@@ -122,7 +119,7 @@ function Bshapes(){
    // Fix this- lose points on contact  
  while((mybXs+2) < Px > (mybXs-2))
   {
-    points -= 3
+    points = points-3
   }
     
   }
