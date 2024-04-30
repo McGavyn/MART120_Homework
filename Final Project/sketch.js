@@ -5,8 +5,10 @@ var Oy = 599;
 var GOy = 599
 var x = 50
 var Sqx = 799
-var diff = 1
+var diff = 0
 var points = 0
+var gpoints = 1
+var bpoints = 1
 var myXs = [];
 var myYs = [];
 var myDiameters = [];
@@ -19,18 +21,20 @@ var col = 0
 
 function setup()
 {
-  createCanvas(800,600);
-  keyPressed();   
- ArshapeSet();  
+createCanvas(800,600);
+ 
+ArshapeSet();  
 }
 function draw() 
 {
+diffic(); 
+Move();
 background(123,28,38);
 Bord();
 Gshapes();
 Bshapes();
+Sc();  
 Player();
-Sc();
 Obst();
 mRec();
 mRound();
@@ -39,11 +43,51 @@ Ex();
 YouWin();
 }
 
+
+function diffic(){
+
+  if(points < 0){
+   bpoints = 0
+   gpoints = 5
+  }
+  else if(0 <= points && points < 30)
+  {
+    bpoints = 1
+    gpoints = 1
+  }
+  
+  else if(30 <= points && points < 60)
+  {
+    bpoints = 1.5
+    gpoints = 0.75
+  }
+  
+  else if(60 <= points && points < 90)
+  {
+   bpoints = 2
+    gpoints = 0.5
+  }
+  
+  else if(90 <= points && points < 100)
+  {
+    bpoints = 3
+    gpoints = 0.25
+  }
+ 
+ 
+  else if(points >= 100){
+    bpoints = 4
+    gpoints = 0
+  }
+ 
+}
 // for both good and bad shapes, add in if/then statements to make them more difficult over time (tie it to the score?)
 function ArshapeSet()
 {
+gsh = 25
+bsh = 10
 
-        for(var i = 0; i < 25; i++)
+        for(var i = 0; i < gsh; i++)
         {
             // get all the random numbers to create Gshapes
             myXs[i] = getRandomNumber(799);
@@ -52,7 +96,7 @@ function ArshapeSet()
             mySizes[i] = 10
         }
   
-          for( i = 0; i < 10; i++)
+          for( i = 0; i < bsh; i++)
         {
             // get all the random numbers to create Bshapes
             mybXs[i] = getRandomNumber(799);
@@ -79,13 +123,10 @@ function Gshapes()
       {
     myYs[i] = getRandomNumber(599)
       } 
-    
-    while(myXs[i] <= Px <= myXs[i] && myYs[i] <= Py <= myYs[i]){
-       points += 1
+
+    if (dist(Px, Py, myXs[i], myYs[i]) < myDiameters[i]) {
+            points += gpoints;
     }
-          
-       
-    
   // add something to earn points on contact
 }
 }
@@ -117,10 +158,10 @@ function Bshapes(){
     
     
    // Fix this- lose points on contact  
- while((mybXs+2) < Px > (mybXs-2))
-  {
-    points = points-3
-  }
+   if (dist(Px, Py, mybXs[i], mybYs[i]) < mybSizes[i]) {
+            points -= bpoints;
+    }
+
     
   }
   
@@ -237,21 +278,22 @@ function getRandomNumber(number)
     return Math.floor(Math.random()*number)+10;
 }
 
-  function keyPressed(){
-  if (key == 'd') 
+  function Move(){
+    
+if(keyIsDown(68))
   {
-   Px+=30
-  } 
-  else if (key == 'a') 
-  {
-    Px-=30;
+      Px+=5
   }
-  else if (key == 's')
-    {
-      Py+=30;
-    }
-   else if (key == 'w')
-    {
-      Py-=30;
-    }
-  }
+if(keyIsDown(65)){
+  Px-=5
+}
+
+if(keyIsDown(87)){
+  Py-=5
+}
+    
+if(keyIsDown(83)){
+  Py+=5
+}
+
+}
