@@ -22,7 +22,9 @@ var col = 0
 function setup()
 {
 createCanvas(800,600);
- 
+document.body.style.backgroundImage = "https://images.unsplash.com/photo-1593476366803-cff071151082?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zmxvd2VyJTIwZmllbGR8ZW58MHx8MHx8fDA%3D"
+document.body.style.backgroundSize = "100% auto"
+
 ArshapeSet();  
 }
 function draw() 
@@ -31,16 +33,12 @@ diffic();
 Move();
 background(123,28,38);
 Bord();
+Vic();  
 Gshapes();
 Bshapes();
 Sc();  
 Player();
-Obst();
-mRec();
-mRound();
-mSq();
 Ex();
-YouWin();
 }
 
 
@@ -109,9 +107,24 @@ bsh = 10
 //the good shapes that give points
 function Gshapes()
 {
+  var re = 20
+  var bl = 80
+  var gr = 195
+  
   for(var i = 0; i < myXs.length; i++)
   {
-        fill(getRandomNumber(300), getRandomNumber(250),getRandomNumber(99))
+    
+    if(re >= 500 || bl >= 500 || gr >= 500){
+      re = getRandomNumber(400)
+      bl = getRandomNumber(500)
+      gr = getRandomNumber(300)
+       }
+    else{
+      re+=10
+      bl+=7
+      gr+=6
+    }
+        fill(re, bl, gr)
         circle(myXs[i], myYs[i], myDiameters[i]);
         
     if(myYs[i] > 0 & myYs[i] < 600)
@@ -170,14 +183,40 @@ function Bshapes(){
 
 
 function Ex(){
-
-  fill(200,1,300)
-  rect(720, 0, 80, 40)
-  rect(770, 40, 30, 60)
-  fill(0)
-  textSize(30)
-  text('EXIT', 730, 27)
+if(points < 100){
+fill(100,170,45);
+textSize(30);
+text('Get 100 points!', 340, 570);
 }
+
+else{
+fill(220,170,155);
+textSize(30);
+text('Reach the exit!', 340, 570);
+  fill(200,1,300);
+  rect(390, 260, 10, 40);
+  rect(440, 260, 10, 40);
+  rect(390,250,60,10);
+  fill(0)
+  square(400,260,40);
+  fill(0);
+  textSize(30);
+  text('EXIT', 390, 250);
+}
+  }
+
+function Vic(){
+if(points >= 100 && Px >= 390 && Px <= 440 && Py >= 260 && Py <= 300){
+  bpoints = 0
+  fill(75,208,38);
+  textSize(40);
+  text('YOU WIN!', 335, 200);
+  
+}
+  
+  
+}
+
 
 function Bord(){
   fill(90, 200, 120)
@@ -185,18 +224,6 @@ function Bord(){
   rect(0,0,4,600)
   rect(796,0,4,600)
   rect(0,596,800,4)
-}
-
-function Obst(){
-fill(50, 190, 320)
-  rect(Rx, 85, 15, 25)
-  fill(120, 300, 10)
-  circle(500, Oy, 42)
-  fill(70, 85, 200)
-  ellipse(Rx, Oy, 20, 42)
-  fill(65, 189, 79)
-  square(Sqx, 150, 25)
-
 }
 
 function Player(){
@@ -219,58 +246,6 @@ function Sc(){
   textSize(30);
   text(points, 400,50);
   
-}
-
-function YouWin(){
-if(Px >= 750 & Py <= 20)
-    {
-      fill(400);
-      textSize(50);
-      text('YOU WIN', 310, 300);
-    }
-  
-  else if(Px < 750 || Py >= 20)
-    {
-      fill(123,28,38);
-      textSize(50);
-      text('YOU WIN', 350, 300);
-    }
-}
-
-
-
-function mSq(){
-  if(Sqx < 0)
-    {
-      Sqx = 799
-    }
-  else if(0 < Sqx < 800)
-    {
-      Sqx -= 5
-    }
-}
-
-function mRound(){
-  if(Oy > 0 & Oy < 600)
-  {
-    Oy-=5;
-  }
-  else
-  {
-    Oy = 599;
-  }
-}
-
-
-function mRec(){
-  if( Rx > 0 & Rx < 800)
-  {
-    Rx-=5;
-  }
-  else
-  {
-    Rx = 799;
-  }
 }
 
 function getRandomNumber(number)
