@@ -22,12 +22,12 @@ function preload(){
 
   backgroundImage = loadImage("https://images.unsplash.com/photo-1593476366803-cff071151082?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zmxvd2VyJTIwZmllbGR8ZW58MHx8MHx8fDA%3D")
 
-  backgroundMusic = loadSound("C:\Users\fever\Downloads\perfect-beauty-191271.mp3");
+ 
 }
 
 function setup(){
 createCanvas(800,600);
-backgroundMusic.loop();
+
 ArshapeSet();  
 }
 
