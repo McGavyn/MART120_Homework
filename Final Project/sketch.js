@@ -22,7 +22,7 @@ function preload(){
 
   backgroundImage = loadImage("https://images.unsplash.com/photo-1593476366803-cff071151082?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zmxvd2VyJTIwZmllbGR8ZW58MHx8MHx8fDA%3D")
 
- 
+
 }
 
 function setup(){
@@ -189,15 +189,15 @@ function Bshapes(){
 
 function Ex(){
 if(points < 100){
-fill(100,170,45);
-textSize(30);
-text('Get 100 points!', 340, 570);
+fill(0);
+textSize(40);
+text('Get 100 points!', 320, 570);
 }
 
 else{
-fill(220,170,155);
-textSize(30);
-text('Reach the exit!', 340, 570);
+fill(0);
+textSize(40);
+text('Reach the exit!', 320, 570);
   fill(200,1,300);
   rect(390, 260, 10, 40);
   rect(440, 260, 10, 40);
@@ -213,7 +213,7 @@ text('Reach the exit!', 340, 570);
 function Vic(){
 if(points >= 100 && Px >= 390 && Px <= 440 && Py >= 260 && Py <= 300){
   bpoints = 0
-  fill(75,208,38);
+  fill(0);
   textSize(40);
   text('YOU WIN!', 335, 200);
   
@@ -232,7 +232,7 @@ function Bord(){
 }
 
 function Player(){
- fill(70, 190, 120)
+ fill(0)
   textSize(20);
   text('You', (Px-10), (Py-10));
   fill(200, 20, 130)
@@ -247,9 +247,9 @@ function Player(){
 }
 
 function Sc(){
-  fill(100,170,45);
-  textSize(30);
-  text(points, 400,50);
+  fill(0);
+  textSize(40);
+  text(points, 390,50);
   
 }
 
